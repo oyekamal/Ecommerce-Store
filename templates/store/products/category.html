@@ -1,6 +1,10 @@
 {% extends "../base.html" %}
 
-{% block title %} Home {% endblock %}
+{% block title %} 
+ 
+{% if category %}{{ category.name|title }}{% else %}Product{% endif %}
+
+{% endblock %}
 
 {% block content %}
 
@@ -20,8 +24,7 @@
 
                         <div class="card-body">
                             <p>
-                                <a class="text-dark text-decoration-none" href="{{ product.get_absolute_url }}">{{
-                                    product.title }}</a>
+                                <a class="text-dark text-decoration-none" href="{{ product.get_absolute_url }}">{{ product.title }}</a>
                             </p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <!-- <div class="btn-group">
